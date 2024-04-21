@@ -33,7 +33,6 @@ def solve():
         if len(p):
             running_process = heapq.heappop(p)
             total = running_process[0] + time
-            # print(running_process[0] , " " , running_process[1] , " " , running_process[2])
             while time < total:
                 temp = []
                 for i in range(process):
@@ -57,8 +56,6 @@ def solve():
                 temp.append(0)
             v.append(temp)
         time += 1
-                 
-    # print(v)
     
     for i in range(process):
         last_ind = 0
@@ -92,11 +89,11 @@ def solve():
     
     plt.xticks(range(max_yticks + 1))
     plt.grid(True)
+    plt.title('SJF')
     plt.show()
 
 if __name__ == "__main__":
     n = 1
-    # n = int(input())
     while n > 0:
         solve()
         n -= 1

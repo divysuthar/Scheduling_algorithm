@@ -34,8 +34,6 @@ def solve():
                 procompleted[i] = 1
         if len(p):
             runnn = heapq.heappop(p)
-            print(runnn)
-            # print(runnn[0] , " " , runnn[1] , " " , runnn[2])
             temp = []
             for i in range(process):
                 if i == runnn[2]:
@@ -53,21 +51,16 @@ def solve():
         else:
             temp = []
             for i in range(process):
-                # print(i)
                 temp.append(0)
             v.append(temp)
         time += 1
-                 
-    # print(v)
     
     for i in range(process):
         last_ind = 0
         for j in range(len(v)):
-            print(v[j][i], end='')
             if v[j][i] == 1:
                 last_ind = j
         finish.append(last_ind + 1)
-        print()
         
     matrix_vec = np.array(v)
     
@@ -92,11 +85,11 @@ def solve():
     
     plt.xticks(range(max_yticks + 1))
     plt.grid(True)
+    plt.title('Priority_scheduling')
     plt.show()
 
 if __name__ == "__main__":
     n = 1
-    # n = int(input())
     while n > 0:
         solve()
         n -= 1

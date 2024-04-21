@@ -87,6 +87,7 @@ def solve():
     
     plt.xticks(range(max_yticks + 1))
     plt.grid(True)
+    plt.title('FCFS')
     plt.show()
 
 if __name__ == "__main__":

@@ -56,8 +56,6 @@ def solve():
                 temp.append(0)
             v.append(temp)
         time += 1
-                 
-    # print(v)
     
     for i in range(process):
         last_ind = 0
@@ -71,6 +69,7 @@ def solve():
     matrix_vec = np.array(v)
     
     nonzero = np.argwhere(matrix_vec == 1)
+    plt.subplot(2,2,1)
     
     for i, j in nonzero:
         plt.fill([i, i + 1, i + 1, i], [len(matrix_vec) - j - 1, len(matrix_vec) - j - 1, len(matrix_vec) - j, len(matrix_vec) - j], 'blue')
@@ -91,11 +90,11 @@ def solve():
     
     plt.xticks(range(max_yticks + 1))
     plt.grid(True)
+    plt.title('SRTF')
     plt.show()
 
 if __name__ == "__main__":
     n = 1
-    # n = int(input())
     while n > 0:
         solve()
         n -= 1
